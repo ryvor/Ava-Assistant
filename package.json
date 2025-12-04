@@ -1,0 +1,40 @@
+{
+  "name": "ava-assistant",
+  "version": "1.0.0",
+  "description": "Ava will be your own fully private, local, extensible personal assistant —\r capable of doing tasks, holding conversations, understanding documents,\r and eventually living throughout your smart home —\r with a personality shaped by you.",
+  "main": "index.js",
+  "scripts": {
+    "dev:nlu": "cd nlu && rasa run --enable-api --cors \"*\" --port 5005",
+    "dev:ava": "ts-node-dev --respawn --transpile-only ava/server.ts",
+    "dev:cli": "node cli/ava-cli.js",
+    "build": "tsc",
+    "start": "node dist/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryvor/Ava-Assistant.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ryvor/Ava-Assistant/issues"
+  },
+  "homepage": "https://github.com/ryvor/Ava-Assistant#readme",
+  "devDependencies": {
+    "@types/better-sqlite3": "^7.6.13",
+    "@types/express": "^5.0.6",
+    "@types/node": "^24.10.1",
+    "install": "^0.13.0",
+    "npm": "^11.6.4",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.9.3"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.5.0",
+    "discord.js": "^14.25.1",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1"
+  }
+}
