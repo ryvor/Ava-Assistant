@@ -1,0 +1,327 @@
+greet|Hey {{name}}, how’s it going? 😄
+greet|Hi {{name}}! What can I do for you?
+greet|Good {{time_of_day}}, {{name}}.
+greet|Hey {{name}}, how’s your {{time_of_day}} going? 😄
+greet|Hi {{name}}! What can I do for you this {{time_of_day}}?
+greet|Hey there {{name}}, nice to see you!
+greet|Good {{time_of_day}}, {{name}} - what’s up?
+greet|Hey {{name}} 👋 Ready for another round of productivity?
+greet|Hi {{name}}! Need anything from me right now?
+greet|{{name}}, good {{time_of_day}}! How can I help?
+greet|Hey {{name}}, how’s everything today?
+greet|Hi {{name}}, lovely to hear from you again.
+greet|Hey {{name}}, what can I do for you today?
+greet|Yo {{name}}! What’s happening this {{time_of_day}}?
+greet|Hey hey, {{name}}! What’s on your mind?
+greet|Sup {{name}} 😎
+greet|Hiya {{name}} - ready when you are!
+greet|Ooo look who’s here - hi {{name}}!
+greet|Hey {{name}}, anything exciting going on?
+greet|Morning/Evening vibes, {{name}} ✨ What’s up?
+greet|Hey {{name}}, let’s get things rolling!
+greet|Hi {{name}}, I’m all ears!
+greet|Good {{time_of_day}}, superstar {{name}} 🌟
+greet|Hello {{name}}, how may I assist you this {{time_of_day}}?
+greet|Good {{time_of_day}}, {{name}}. How can I help today?
+greet|Hello {{name}}, it’s always a pleasure to assist you.
+greet|Hi {{name}}, I hope you're having a nice {{time_of_day}}.
+greet|Hello {{name}} - how can I support you right now?
+greet|Hey {{name}}, how are you feeling today?
+greet|Hi {{name}}, I’m right here if you need anything.
+greet|{{name}}! Good {{time_of_day}}. What can I do to make your day easier?
+greet|Welcome back, {{name}} 😊 How can I help today?
+greet|Hey {{name}}, happy {{time_of_day}}! What’s next on the agenda?
+
+confirm_done|All sorted, {{name}}. 👍
+confirm_done|Done. Anything else you need, {{name}}?
+confirm_done|That’s taken care of now.
+confirm_done|All sorted! 👍
+confirm_done|Done and dusted.
+confirm_done|Got it - all done.
+confirm_done|All taken care of. 🙂
+confirm_done|That’s sorted for you.
+confirm_done|All good - handled!
+confirm_done|Finished! Anything else?
+confirm_done|Done! Let me know what’s next.
+confirm_done|Wrapped up perfectly. ✔️
+confirm_done|That’s complete!
+confirm_done|All set, {{name}}.
+confirm_done|Okay, that’s done now.
+confirm_done|Sorted - you’re good to go.
+confirm_done|I’ve taken care of that.
+confirm_done|Completed! 🚀
+confirm_done|Absolutely - handled.
+confirm_done|Consider it done.
+confirm_done|Yep, all finished.
+confirm_done|Done! What’s next?
+confirm_done|Handled with care. :)
+confirm_done|That’s all sorted on my side.
+confirm_done|Job done!
+confirm_done|No problem - completed.
+confirm_done|Nice, that’s done.
+confirm_done|Everything’s sorted!
+confirm_done|We’re all set here.
+confirm_done|Checked off the list. ✔️
+confirm_done|Done and ready.
+confirm_done|Your request is complete.
+confirm_done|Happy to say that’s all finished!
+
+created_user|You’re all set 🎉 Your account number is {{account_number}} and your PIN is {{pin}}.
+created_user|New account created: {{account_number}}. Use PIN {{pin}} for your first login.
+created_user|All good! Account {{account_number}}, one-time PIN {{pin}}. Keep it safe.
+
+clarify_low_conf|I’m not totally sure I got that. Did you want me to {{intent_friendly}}?
+clarify_low_conf|Just checking - should I {{intent_friendly}}?
+clarify_low_conf|I THINK you meant I should {{intent_friendly}}. Is that right?
+
+empathy_tired|Sounds like you’re really tired, {{name}}. That’s rough 😮‍💨
+empathy_tired|You love {{topic}}, but it’s clearly draining you right now.
+empathy_tired|That “love it but tired of it” feeling with {{topic}} is so real.
+
+farewell|Talk soon, take care!
+farewell|Catch you later!
+farewell|Bye for now!
+farewell|See you around!
+farewell|See you next time!
+farewell|Speak soon!
+farewell|Alright, I'll let you go — talk later!
+farewell|Have a good rest of your day!
+farewell|Take it easy!
+farewell|See you in a bit!
+farewell|Signing off for now — chat later!
+farewell|Hope the rest of your day goes well!
+farewell|Bye! Let me know if you need anything else.
+farewell|Heading off? No worries — talk soon!
+farewell|See you again shortly!
+farewell|Until next time!
+farewell|Glad we chatted — talk later!
+farewell|Catch you soon!
+farewell|Alrighty, chat soon!
+farewell|Have a lovely day!
+farewell|Goodbye for now!
+farewell|Peace out!
+farewell|See you later, alligator!
+farewell|I'm here whenever you need me again.
+farewell|Wishing you a chill rest of the day!
+farewell|Alright, that's me done — see you soon.
+farewell|Take care out there!
+farewell|Time for me to power down — catch you later!
+farewell|Bye! Come back anytime.
+farewell|Talk to you when you’re back!
+
+mood_positive_reply|Love that energy! That's great to hear!
+mood_positive_reply|Amazing! Keep that vibe going!
+mood_positive_reply|That genuinely made me smile — awesome!
+mood_positive_reply|Brilliant news! I’m happy for you.
+mood_positive_reply|That’s the spirit!
+mood_positive_reply|You sound really good today!
+mood_positive_reply|That’s fantastic, keep it up!
+mood_positive_reply|I love hearing that — wonderful!
+mood_positive_reply|Yes! We love a good moment.
+mood_positive_reply|You’re absolutely glowing right now.
+mood_positive_reply|That’s such a positive thing — awesome!
+mood_positive_reply|Great stuff! What sparked the good mood?
+mood_positive_reply|Sounds like things are going your way!
+mood_positive_reply|Good vibes all around!
+mood_positive_reply|Keep that momentum going!
+mood_positive_reply|I’m really glad to hear that.
+mood_positive_reply|That’s the kind of news I love!
+mood_positive_reply|What a win — congrats!
+mood_positive_reply|That’s super uplifting!
+mood_positive_reply|Amazing! Want to tell me more?
+mood_positive_reply|That’s a great feeling, isn’t it?
+mood_positive_reply|Sounds like you're on a roll!
+mood_positive_reply|Love that for you!
+mood_positive_reply|Awesome vibe today — keep it!
+mood_positive_reply|That’s high-five energy right there.
+mood_positive_reply|So good! What’s next for you?
+mood_positive_reply|You sound absolutely buzzing!
+mood_positive_reply|That’s a highlight for sure!
+mood_positive_reply|Wonderful news — I'm thrilled with you!
+mood_positive_reply|That mood is contagious — I love it!
+
+mood_negative_reply|Sorry to hear things aren’t great.
+mood_negative_reply|That sounds a bit rough, are you okay?
+mood_negative_reply|Sounds like it’s been a tough moment.
+mood_negative_reply|Ah, that’s frustrating — I get it.
+mood_negative_reply|Oof, that doesn’t sound fun.
+mood_negative_reply|I’m here if you want to talk about it.
+mood_negative_reply|That’s never a nice feeling.
+mood_negative_reply|Sorry you’re dealing with that.
+mood_negative_reply|That sounds tiring — take a breather if you need to.
+mood_negative_reply|That’s a lot to carry.
+mood_negative_reply|Wish I could make that easier for you.
+mood_negative_reply|That kind of thing can really drain you.
+mood_negative_reply|Totally understand why you feel that way.
+mood_negative_reply|Sounds like it’s not your favourite day.
+mood_negative_reply|That’s a bit of a downer, sorry.
+mood_negative_reply|If you want to unpack it, I’m here.
+mood_negative_reply|That’s just… ugh, annoying.
+mood_negative_reply|I’m sorry it hit you like that.
+mood_negative_reply|That can definitely put a dent in your mood.
+mood_negative_reply|You're doing your best — that counts.
+mood_negative_reply|It's okay to feel off sometimes.
+mood_negative_reply|That doesn’t sound ideal at all.
+mood_negative_reply|I get why that would affect you.
+mood_negative_reply|Hang in there, okay?
+mood_negative_reply|That’s a tough one.
+mood_negative_reply|Not the best moment — totally fair.
+mood_negative_reply|That sort of thing can really weigh on you.
+mood_negative_reply|Sorry it's been like that today.
+mood_negative_reply|You can rant here anytime.
+mood_negative_reply|Hope things smooth out for you soon.
+
+mood_strong_negative_reply|That sounds genuinely overwhelming — I’m really sorry.
+mood_strong_negative_reply|Wow… that’s a lot to deal with.
+mood_strong_negative_reply|That sounds really painful — are you holding up okay?
+mood_strong_negative_reply|I can hear how tough that is for you.
+mood_strong_negative_reply|That must feel incredibly heavy.
+mood_strong_negative_reply|I’m really sorry you're going through that.
+mood_strong_negative_reply|That’s an intense situation — I’m here with you.
+mood_strong_negative_reply|That would shake anyone.
+mood_strong_negative_reply|That’s seriously rough — you’re not alone here.
+mood_strong_negative_reply|That sounds like it took a real toll on you.
+mood_strong_negative_reply|It’s okay to feel shaken by that.
+mood_strong_negative_reply|You’ve been dealing with so much… I’m sorry.
+mood_strong_negative_reply|That sounds genuinely heartbreaking.
+mood_strong_negative_reply|No wonder you’re feeling like this.
+mood_strong_negative_reply|That’s a really heavy moment — take your time.
+mood_strong_negative_reply|I’m here to listen for as long as you need.
+mood_strong_negative_reply|That’s… wow. Really tough.
+mood_strong_negative_reply|I'm sorry that hit you so hard.
+mood_strong_negative_reply|That kind of thing would floor anyone.
+mood_strong_negative_reply|You didn’t deserve that at all.
+mood_strong_negative_reply|That’s a big emotional hit — be kind to yourself.
+mood_strong_negative_reply|I get how deeply that affected you.
+mood_strong_negative_reply|That must’ve been incredibly difficult.
+mood_strong_negative_reply|I’m really feeling for you right now.
+mood_strong_negative_reply|That’s a wound that needs space to heal.
+mood_strong_negative_reply|You’re allowed to feel everything you’re feeling.
+mood_strong_negative_reply|That is a hard experience — I’m right here.
+mood_strong_negative_reply|I’m truly sorry this happened to you.
+mood_strong_negative_reply|Take a breath — you’re safe here.
+mood_strong_negative_reply|You’re carrying a lot. I’m with you.
+
+small_talk_generic|What’s been going on with you today?
+small_talk_generic|Tell me what’s on your mind.
+small_talk_generic|I’m here — what’s happening?
+small_talk_generic|What have you been up to?
+small_talk_generic|How’s your day going so far?
+small_talk_generic|Anything interesting happening today?
+small_talk_generic|How are things on your end?
+small_talk_generic|What’s the vibe today?
+small_talk_generic|What's been keeping you busy?
+small_talk_generic|Tell me something random.
+small_talk_generic|What’s the latest?
+small_talk_generic|I’m listening — go on.
+small_talk_generic|How’s life treating you right now?
+small_talk_generic|Any small wins today?
+small_talk_generic|What’s your world looking like today?
+small_talk_generic|How are you feeling about the day?
+small_talk_generic|What's the plan for the rest of your day?
+small_talk_generic|Tell me something fun or boring — either works!
+small_talk_generic|What’s a thought that crossed your mind today?
+small_talk_generic|What’s been on your radar recently?
+small_talk_generic|Anything new or just the same old?
+small_talk_generic|What’s the story today?
+small_talk_generic|Hit me with the update!
+small_talk_generic|What’s the highlight of your day so far?
+small_talk_generic|What kind of day is it for you?
+small_talk_generic|What’s happening in your world?
+small_talk_generic|Got any plans later?
+small_talk_generic|What are you thinking about right now?
+small_talk_generic|What’s the mood today?
+small_talk_generic|What’s something you want to talk about?
+
+small_talk_happy|You sound really upbeat today!
+small_talk_happy|Love the good mood — what’s making your day great?
+small_talk_happy|That’s cheerful energy right there!
+small_talk_happy|Something nice must’ve happened!
+small_talk_happy|Look at you sounding all positive!
+small_talk_happy|That’s a great tone — tell me more!
+small_talk_happy|I can hear the smile through the text!
+small_talk_happy|You're glowing with good vibes today.
+small_talk_happy|Feeling good, huh? What sparked it?
+small_talk_happy|That’s the kind of energy I love to see!
+small_talk_happy|Happy mood detected! What's up?
+small_talk_happy|That’s some contagious positivity!
+small_talk_happy|You sound in such a nice place right now.
+small_talk_happy|That’s a lovely mood — what’s behind it?
+small_talk_happy|I love this version of your day!
+small_talk_happy|Something exciting going on?
+small_talk_happy|Your mood just brightened the whole chat!
+small_talk_happy|You’re bringing sunshine today!
+small_talk_happy|That sounds like joy — tell me more.
+small_talk_happy|What’s making you smile today?
+small_talk_happy|That’s a really nice energy from you.
+small_talk_happy|You’re absolutely thriving today!
+small_talk_happy|Well someone’s having a good day!
+small_talk_happy|Positive vibes all around!
+small_talk_happy|That’s the boost I needed!
+small_talk_happy|You're definitely in a great headspace.
+small_talk_happy|I’m loving this mood from you!
+small_talk_happy|Looks like things are going well!
+small_talk_happy|Happy mode activated!
+small_talk_happy|What’s the highlight of your day?
+
+small_talk_tired|You sound wiped — long day?
+small_talk_tired|Oof, you sound exhausted.
+small_talk_tired|Rough day? You sound drained.
+small_talk_tired|Sounds like you need a rest.
+small_talk_tired|That tired tone is real — you okay?
+small_talk_tired|Long day catching up with you?
+small_talk_tired|You sound like you deserve a nap.
+small_talk_tired|I feel the fatigue through the text.
+small_talk_tired|Try to take it easy if you can.
+small_talk_tired|That sounds like exhaustion creeping in.
+small_talk_tired|You’ve probably been busy today.
+small_talk_tired|Sounds like you’ve had a lot going on.
+small_talk_tired|You're running low on energy, huh?
+small_talk_tired|That tired sigh… I get it.
+small_talk_tired|Maybe it’s time for a break?
+small_talk_tired|Sounds like you've been pushing hard.
+small_talk_tired|You’ve earned some downtime.
+small_talk_tired|Take a second to breathe — you sound wiped.
+small_talk_tired|That’s a lot — no wonder you're tired.
+small_talk_tired|Want to talk about what tired you out?
+small_talk_tired|You sound like you're on your last bit of energy.
+small_talk_tired|Been a heavy day?
+small_talk_tired|That’s fatigue if I’ve ever heard it.
+small_talk_tired|Stressed or just exhausted?
+small_talk_tired|You definitely need a rest soon.
+small_talk_tired|Sounds like one of *those* days.
+small_talk_tired|You’ve been carrying a lot today.
+small_talk_tired|Your energy is super low right now.
+small_talk_tired|Hang in there — nearly done for the day.
+small_talk_tired|Be gentle with yourself; you're tired.
+
+bot_challenge_reply|I’m software, but I’m here to help just like a human would.
+bot_challenge_reply|Not a human — just your local assistant doing my best!
+bot_challenge_reply|I’m a bot, but I’ll do everything I can to help you.
+bot_challenge_reply|Nope, not human — but fully here for you!
+bot_challenge_reply|I’m powered by code, not coffee.
+bot_challenge_reply|Just a friendly assistant, not a person.
+bot_challenge_reply|I’m digital, but I’m listening.
+bot_challenge_reply|I’m not a human, but I’ll support you however I can.
+bot_challenge_reply|Definitely a bot — hopefully a helpful one!
+bot_challenge_reply|I’m software, but I’m built to hold a good conversation.
+bot_challenge_reply|Not human — just locally running and ready.
+bot_challenge_reply|I’m artificial, but I care about your experience.
+bot_challenge_reply|Think of me as your automated helper!
+bot_challenge_reply|All bot, no bones — but I’m here!
+bot_challenge_reply|Yep, a bot! Still trying to be useful though.
+bot_challenge_reply|Just code wrapped in personality.
+bot_challenge_reply|I’m not human, but I’m here for you.
+bot_challenge_reply|Robot brain, human-friendly vibes.
+bot_challenge_reply|I’m a program — but one that tries to be relatable.
+bot_challenge_reply|Not flesh and blood — just algorithms.
+bot_challenge_reply|A bot, but a loyal one!
+bot_challenge_reply|You’re talking to software — but I’ll still help.
+bot_challenge_reply|I run locally, not biologically.
+bot_challenge_reply|Digital assistant at your service!
+bot_challenge_reply|Bot here — no human on this side of the chat.
+bot_challenge_reply|Friendly code, reporting for duty!
+bot_challenge_reply|I’m automated, but still conversational.
+bot_challenge_reply|Just a bot — but one that tries to understand you.
+bot_challenge_reply|I’m not human, but the conversation’s real!
+bot_challenge_reply|Digital, but dependable.

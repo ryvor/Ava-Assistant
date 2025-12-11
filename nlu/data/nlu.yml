@@ -1,127 +1,2556 @@
-version: "3.1"
-
+version: '3.1'
 nlu:
 - intent: greet
-  examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - moin
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
+  examples:
+  - text: hey
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: hello
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: hi
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: hello there
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: good morning
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: good evening
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: moin
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: hey there
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: let's go
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.5
+  - text: hey dude
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: goodmorning
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: goodevening
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: good afternoon
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: hey hi
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: hi again
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: yo there
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: hello friend
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: hey buddy
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: hi you
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: morning there
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: evening to you
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: good to see you
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: hey, Ava!
+    metadata:
+      emotions:
+        happy: 0.6
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.4
 - intent: goodbye
-  examples: |
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-
+  examples:
+  - text: cu
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: good by
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: cee you later
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: good night
+    metadata:
+      emotions:
+        happy: 0.45
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.55
+        intensity: 0.4
+  - text: bye
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: goodbye
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: have a nice day
+    metadata:
+      emotions:
+        happy: 0.45
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: see you around
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: bye bye
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: see you later
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: I'm leaving now
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.55
+        intensity: 0.4
+  - text: bye for now
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: see you soon
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: I'm heading out
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.55
+        intensity: 0.4
+  - text: have a good night
+    metadata:
+      emotions:
+        happy: 0.45
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.55
+        intensity: 0.4
+  - text: peace out
+    metadata:
+      emotions:
+        happy: 0.4
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.35
+  - text: I'm done for today
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.55
+        intensity: 0.4
+  - text: catch you soon
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: until later
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.2
+        intensity: 0.3
+  - text: I'm signing off
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.55
+        intensity: 0.4
 - intent: affirm
-  examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-
+  examples:
+  - text: 'yes'
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: y
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: indeed
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: of course
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: that sounds good
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: correct
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: absolutely yes
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: that works
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: sure
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: yes please
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: yeah that's fine
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: okay sounds good
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: yep sure
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: definitely yes
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: alright
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: yep that's perfect
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: thanks, that helped
+    metadata:
+      emotions:
+        happy: 0.7
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: that helped a bit
+    metadata:
+      emotions:
+        happy: 0.65
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: thanks for listening
+    metadata:
+      emotions:
+        happy: 0.7
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: appreciate that
+    metadata:
+      emotions:
+        happy: 0.7
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.35
 - intent: deny
-  examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
+  examples:
+  - text: 'no'
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: n
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: never
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: I don't think so
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: don't like that
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: no way
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.2
+        anxious: 0.05
+        angry: 0.65
+        tired: 0
+        intensity: 0.6
+  - text: not really
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: absolutely not
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.2
+        anxious: 0.05
+        angry: 0.65
+        tired: 0
+        intensity: 0.6
+  - text: nah
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: that's not correct
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: I disagree
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.2
+        anxious: 0.05
+        angry: 0.65
+        tired: 0
+        intensity: 0.6
+  - text: nope not that
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: no thanks
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: not at all
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.25
+        anxious: 0.05
+        angry: 0.5
+        tired: 0
+        intensity: 0.5
+  - text: nooooo
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.2
+        anxious: 0.05
+        angry: 0.65
+        tired: 0
+        intensity: 0.6
+  - text: I'm not okay with that
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
+  - text: I would rather not
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.15
+        anxious: 0.05
+        angry: 0.4
+        tired: 0
+        intensity: 0.45
 - intent: mood_great
-  examples: |
-    - perfect
-    - great
-    - amazing
-    - feeling like a king
-    - wonderful
-    - I am feeling very good
-    - I am great
-    - I am amazing
-    - I am going to save the world
-    - super stoked
-    - extremely good
-    - so so perfect
-    - so good
-    - so perfect
-
+  examples:
+  - text: perfect
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: great
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: amazing
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.9
+  - text: feeling like a king
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: wonderful
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: I am feeling very good
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: I am great
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: I am amazing
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.9
+  - text: I am going to save the world
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.95
+  - text: super stoked
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.9
+  - text: extremely good
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: so so perfect
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.9
+  - text: so good
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: so perfect
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.9
+  - text: I'm on top of the world
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.95
+  - text: today feels amazing
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.9
+  - text: everything is awesome
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.9
+  - text: I feel incredible
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.9
+  - text: I'm so pumped
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: I'm loving today
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: honestly feeling brilliant
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: I'm super motivated
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.9
+  - text: I'm full of joy right now
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
+  - text: today is going perfectly
+    metadata:
+      emotions:
+        happy: 0.95
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0
+        intensity: 0.85
 - intent: mood_unhappy
-  examples: |
-    - my day was horrible
-    - I am sad
-    - I don't feel very well
-    - I am disappointed
-    - super sad
-    - I'm so sad
-    - sad
-    - very sad
-    - unhappy
-    - not good
-    - not very good
-    - extremly sad
-    - so saad
-    - so sad
-
+  examples:
+  - text: my day was horrible
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.95
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.8
+  - text: I am sad
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: I don't feel very well
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: I am disappointed
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: super sad
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: I'm so sad
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: sad
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: very sad
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: unhappy
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: not good
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.45
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: not very good
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: extremly sad
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: so saad
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: so sad
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: I'm feeling really low today
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.8
+        intensity: 0.8
+  - text: everything went wrong
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: I'm miserable
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.95
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.8
+  - text: today sucked
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.95
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.8
+  - text: I'm really upset
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: I'm not in a good place
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.45
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: I feel totally drained
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.8
+        intensity: 0.8
+  - text: I'm struggling today
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.8
+        intensity: 0.8
+  - text: nothing is working out
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.9
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.75
+  - text: I'm feeling awful right now
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.95
+        anxious: 0.35
+        angry: 0.1
+        tired: 0.5
+        intensity: 0.8
+- intent: mood_negative
+  examples:
+  - text: I'm really annoyed
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
+  - text: I'm so frustrated
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
+  - text: this is really stressing me out
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.55
+        angry: 0.75
+        tired: 0.1
+        intensity: 0.85
+  - text: I'm angry
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
+  - text: I'm in a bad mood
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
+  - text: everything is irritating me
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
+  - text: I'm fed up
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.9
+        tired: 0.1
+        intensity: 0.9
+  - text: I'm mad about it
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
+  - text: I'm furious
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
+  - text: I'm losing my patience
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.45
+        angry: 0.9
+        tired: 0.1
+        intensity: 0.9
+  - text: I'm not happy at all
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
+  - text: I'm feeling aggressive today
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
+  - text: this is ridiculous
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
+  - text: I'm done with today
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.9
+        tired: 0.1
+        intensity: 0.9
+  - text: ugh, I'm so irritated
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0.1
+        anxious: 0.35
+        angry: 0.85
+        tired: 0.1
+        intensity: 0.85
 - intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
+  examples:
+  - text: are you a bot?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: are you a human?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: am I talking to a bot?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: am I talking to a human?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: be honest, are you AI?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.35
+        angry: 0.05
+        tired: 0
+        intensity: 0.4
+  - text: are you a real assistant?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: you're some kind of bot, right?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: is this automated or human?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: what exactly are you, Ava?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: do you think like a person?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: are you just programmed replies?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.35
+        angry: 0.05
+        tired: 0
+        intensity: 0.4
+  - text: you're not human, are you?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: am I speaking to software?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: are you artificial intelligence?
+    metadata:
+      emotions:
+        happy: 0
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
 - intent: small_talk
-  examples: |
-    - how are you
-    - what are you doing
-    - what's up
-    - talk to me
-    - I'm bored
-    - how's it going
-    - how's your day
+  examples:
+  - text: how are you
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: what are you doing
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: what's up
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: talk to me
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: I'm bored
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.35
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.3
+  - text: how's it going
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: how's your day
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: tell me something interesting
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.3
+  - text: let's chat
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: say something
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: keep me company
+    metadata:
+      emotions:
+        happy: 0.2
+        sad: 0
+        anxious: 0.15
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: what's new with you?
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: how do you feel today?
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: anything fun going on?
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.3
+  - text: can we talk?
+    metadata:
+      emotions:
+        happy: 0.2
+        sad: 0
+        anxious: 0.15
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: what's happening today?
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: how have things been?
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: I saw this new show Sweet Home
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: I've been watching a new series on Netflix
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: did you see the latest episode of that show?
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: I started a new TV show last night
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: I've just been watching Netflix all day
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.25
+  - text: I'm really tired and want [pizza](dish)
+    metadata:
+      emotions:
+        happy: 0.2
+        sad: 0.1
+        anxious: 0.1
+        angry: 0
+        tired: 0.7
+        intensity: 0.6
+  - text: I'm exhausted and could really use a [takeaway](cuisine)
+    metadata:
+      emotions:
+        happy: 0.15
+        sad: 0.1
+        anxious: 0.1
+        angry: 0
+        tired: 0.8
+        intensity: 0.65
+  - text: I'm stressed and need some [food](dish)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0.2
+        anxious: 0.6
+        angry: 0.1
+        tired: 0.3
+        intensity: 0.7
+  - text: I've had a long day and want to order [dinner](dish)
+    metadata:
+      emotions:
+        happy: 0.2
+        sad: 0.1
+        anxious: 0.1
+        angry: 0
+        tired: 0.6
+        intensity: 0.45
+  - text: I'm feeling a bit down, maybe some [comfort food](dish) would help
+    metadata:
+      emotions:
+        happy: 0.15
+        sad: 0.6
+        anxious: 0.15
+        angry: 0
+        tired: 0.25
+        intensity: 0.6
+  - text: it's been a tiring day, I could go for some [takeout](cuisine)
+    metadata:
+      emotions:
+        happy: 0.2
+        sad: 0.1
+        anxious: 0.1
+        angry: 0
+        tired: 0.65
+        intensity: 0.5
+  - text: I've had a Great day, let's celebrate with some [food](dish)
+    metadata:
+      emotions:
+        happy: 0.8
+        sad: 0
+        anxious: 0
+        angry: 0
+        tired: 0.1
+        intensity: 0.7
+  - text: after a long day, I just want to order some [dinner](dish)
+    metadata:
+      emotions:
+        happy: 0.2
+        sad: 0.1
+        anxious: 0.1
+        angry: 0
+        tired: 0.65
+        intensity: 0.5
 
 - intent: order_food
-  examples: |
-    - find me the cheapest [Hawaiian pizza](dish) around
-    - I want a [large](size) [pepperoni pizza](dish) near me
-    - order some [Chinese](cuisine) food
-    - get me [Indian](cuisine) takeaway
-    - I want [pizza](dish)
-    - I'm hungry, order food
-
+  examples:
+  - text: find me the cheapest [Hawaiian pizza](dish) around
+    metadata:
+      emotions:
+        happy: 0.3
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: I want a [large](size) [pepperoni pizza](dish) near me
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: order some [Chinese](cuisine) food
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: get me [Indian](cuisine) takeaway
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: I want [pizza](dish)
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: I'm hungry, order food
+    metadata:
+      emotions:
+        happy: 0.4
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: can you find a place that sells [ramen](dish)?
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: I want some [Mexican](cuisine) food
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: grab me something [sweet and sour](dish)
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: show me good [pizza](dish) places nearby
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: find a nearby [curry](dish) shop
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: order me whatever [Italian](cuisine) place is rated best
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: I'm craving [noodles](dish)
+    metadata:
+      emotions:
+        happy: 0.4
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.45
+  - text: pick a restaurant and order for me
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: get me something tasty for dinner
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: find cheap [sushi](dish) options locally
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: order from [Sweet Home](restaurant) takeaway
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
+  - text: get me something from [Sweet Home](restaurant) restaurant
+    metadata:
+      emotions:
+        happy: 0.35
+        sad: 0
+        anxious: 0.1
+        angry: 0
+        tired: 0
+        intensity: 0.4
 - intent: book_taxi
-  examples: |
-    - book me an uber to the airport
-    - I need a taxi to town
-    - get me a cab home
-    - arrange an uber for tomorrow at midday
-    - call me a taxi
-
+  examples:
+  - text: book me an uber to the airport
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.5
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.55
+  - text: I need a taxi to town
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.45
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.5
+  - text: get me a cab home
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.45
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.5
+  - text: arrange an uber for tomorrow at midday
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.35
+  - text: call me a taxi
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.45
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.5
+  - text: schedule a ride for me
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.35
+  - text: can you get me transportation?
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.45
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.5
+  - text: I need a lift somewhere
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.45
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.5
+  - text: book a car to take me home
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.45
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.5
+  - text: arrange a taxi pickup
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.3
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.35
+  - text: get me a ride ASAP
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.6
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.7
+  - text: I need transport right now
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.6
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.7
+  - text: reserve me a cab in 10 minutes
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.45
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.5
+  - text: can you call a ride service?
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.45
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.5
+  - text: get me to the airport please
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.5
+        angry: 0.05
+        tired: 0.05
+        intensity: 0.55
 - intent: document_question
-  examples: |
-    - what does this say
-    - read this for me
-    - do they have [burgers](item) on the menu
-    - any [vegan](item) options here
-    - what is this in [GBP](target_currency)
-    - can you summarise this document
+  examples:
+  - text: what does this say
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: read this for me
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: do they have [burgers](item) on the menu
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: any [vegan](item) options here
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: what is this in [GBP](target_currency)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: can you summarise this document
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.3
+  - text: what does this section mean?
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: is this mentioning anything about [gluten](item)?
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: does the document include [desserts](item)?
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: extract the key points from this
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.3
+  - text: check if this mentions [delivery](item)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: highlight the important parts
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.3
+  - text: explain this text to me
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: can you interpret this?
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: is there anything here about [allergies](item)?
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: translate this amount into [GBP](target_currency) for me
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0
+        tired: 0
+        intensity: 0.35
+- intent: create_user
+  examples:
+  - text: can you create a user called [firstname lastname](user_identifier) please
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: create new a user [username](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: i want to add a new user
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: add a new user called [mark jensen](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: please set up an account for [john.doe](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: create a user profile for [amy stone](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: make a new user with the name [j.smith](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: i need you to register a user called [lucas white](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: can you add [newuser01](user_identifier) as a new user
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: create an account for [sarah green](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: set up a fresh user named [kevin.b](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.25
+        sad: 0
+        anxious: 0.05
+        angry: 0
+        tired: 0
+        intensity: 0.35
+- intent: delete_user
+  examples:
+  - text: Can you remove a user for me
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.2
+        tired: 0
+        intensity: 0.4
+  - text: i want to remove the user [user](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.2
+        tired: 0
+        intensity: 0.4
+  - text: please remove the user [exampleuser](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.2
+        tired: 0
+        intensity: 0.4
+  - text: delete the user account for [olduser](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.2
+        tired: 0
+        intensity: 0.4
+  - text: remove user [tina.m](user_identifier) from the system
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.2
+        tired: 0
+        intensity: 0.4
+  - text: i need you to delete the user called [markus](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.2
+        tired: 0
+        intensity: 0.4
+  - text: can you get rid of the user [tempuser01](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.15
+        tired: 0
+        intensity: 0.35
+  - text: please delete [charlie.w](user_identifier)'s account
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.2
+        tired: 0
+        intensity: 0.4
+  - text: take out the user [unused.account](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.15
+        tired: 0
+        intensity: 0.35
+  - text: remove the profile belonging to [jack88](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.2
+        tired: 0
+        intensity: 0.4
+  - text: can you eliminate the user [guest.test](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.05
+        sad: 0.05
+        anxious: 0.1
+        angry: 0.15
+        tired: 0
+        intensity: 0.35
+- intent: modify_user
+  examples:
+  - text: can you please reset the password for [username](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: please reset a user password for me
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: please change the password for [user](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: reset the password of [john.doe](user_identifier) please
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: update the password for [markus](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: i need a password reset for [amy.stone](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: can you modify the user account [kevinb](user_identifier) and reset their
+      password
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: please set a new password for [testuser01](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: change the credentials for [maria.w](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: refresh the password belonging to [sampleuser](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+  - text: can you update the login password of [peter.s](user_identifier)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.2
+        angry: 0
+        tired: 0
+        intensity: 0.35
+- intent: change_admin_password
+  examples:
+  - text: can you change the pasword please to [password](target_password)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: can you change the password please
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: change password
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: change the passphrase please
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: change the pass to [securePassword123](target_password)
+    metadata:
+      emotions:
+        happy: 0.2
+        sad: 0
+        anxious: 0.2
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: update the admin password to [newPass890](target_password)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: i want to change the admin password
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: 'set a new admin password: [UltraSafe987](target_password)'
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: please update my admin passphrase to [MyNewOne42](target_password)
+    metadata:
+      emotions:
+        happy: 0.1
+        sad: 0
+        anxious: 0.25
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: replace the current admin password with [BetterPass001](target_password)
+    metadata:
+      emotions:
+        happy: 0.2
+        sad: 0
+        anxious: 0.2
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
+  - text: modify the admin password to be [superStrong!!55](target_password)
+    metadata:
+      emotions:
+        happy: 0.2
+        sad: 0
+        anxious: 0.2
+        angry: 0.05
+        tired: 0
+        intensity: 0.35
