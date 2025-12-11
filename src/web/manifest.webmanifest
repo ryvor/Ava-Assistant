@@ -1,0 +1,17 @@
+{
+  "name": "Ava Assistant",
+  "short_name": "Ava",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#eef0f8",
+  "theme_color": "#7b5cff",
+  "description": "Chat with Ava Assistant.",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
