@@ -1,4 +1,5 @@
 node_modules
+dist
 .env
-nlu/.rasa
-nlu/.venv
+.DS_Store
+*.gguf
