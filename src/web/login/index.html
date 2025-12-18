@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ava Login</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/shared/icon.svg" type="image/svg+xml">
+		<link href="./style.css" type="text/css" rel="stylesheet">
+		<!-- Phosphor Icons -->
+		<link rel="stylesheet" href="/phosphor/src/regular/style.css">
+		<!-- PWA -->
+		<link rel="manifest" href="/shared/manifest.webmanifest">
+		<meta name="theme-color" content="#7b5cff">
+	</head>
+	<body>
+		<div class="preload-page" id="login-preload" style="display: flex;">
+			<div class="loader-card">
+				<div class="loader-orb">
+					<div class="loader-orb-core">A</div>
+					<div class="loader-orb-ring"></div>
+				</div>
+				<div class="loader-text">
+					<h1>Checking session</h1>
+				</div>
+				<div class="loader-progress">
+					<span class="dot"></span>
+					<span class="dot"></span>
+					<span class="dot"></span>
+				</div>
+			</div>
+		</div>
+	<div class="login-page" id="login-page" style="display: none;">
+		<div class="login-card">
+			<h1 class="login-title">Welcome back</h1>
+			<p class="login-sub">Enter your 6-digit ID and 4-digit PIN to continue.</p>
+
+			<div class="saved-users" id="saved-users"></div>
+
+			<div class="login-form">
+				<label for="login-id">User ID</label>
+				<input id="login-id" placeholder="123456" inputmode="numeric" maxlength="6" autocomplete="username" />
+
+					<label for="login-pin">PIN</label>
+					<input id="login-pin" placeholder="1234" inputmode="numeric" maxlength="4" autocomplete="current-password" />
+
+					<label class="remember-row">
+						<input type="checkbox" id="login-remember" />
+						<span>Remember me on this device</span>
+					</label>
+				</div>
+
+				<button class="button primary full" onclick="loginUser()">Log in</button>
+				<div id="login-error" class="error-msg"></div>
+			</div>
+		</div>
+
+		<div id="toast-container" class="toast-container"></div>
+		<script src="/shared/ui.js"></script>
+		<script src="./script.js"></script>
+	</body>
+</html>

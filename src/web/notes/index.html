@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Ava Notes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/shared/icon.svg" type="image/svg+xml">
+    <link href="./style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="/phosphor/src/regular/style.css">
+    <link rel="manifest" href="/shared/manifest.webmanifest">
+    <meta name="theme-color" content="#7b5cff">
+</head>
+<body>
+    <div class="preload-page" style="display: flex;">
+        <div class="loader-card">
+            <div class="loader-orb">
+                <div class="loader-orb-core">A</div>
+                <div class="loader-orb-ring"></div>
+            </div>
+            <div class="loader-text">
+                <h1>Ava is waking up</h1>
+            </div>
+            <div class="loader-progress">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </div>
+    <div class="chat-page" style="display: none;">
+			<!-- SIDEBAR -->
+			<aside class="sidebar"tabindex="-1">
+				<div class="sidebar-header">
+					<div class="sidebar-title">Ava Assistant</div>
+				</div>
+				<div class="sidebar-menu">
+					<div class="sidebar-item" onclick="window.location.href='/'">
+						<span class="icon">
+							<i class="ph ph-chat"></i>
+						</span>
+						<span>Chat</span>
+					</div>
+					<div class="sidebar-item active">
+						<span class="icon">
+							<i class="ph ph-note"></i>
+						</span>
+						<span>Notes</span>
+					</div>
+					<div class="sidebar-item" onclick="window.location.href='/orders'">
+						<span class="icon">
+							<i class="ph ph-list"></i>
+						</span>
+						<span>Orders</span>
+					</div>
+				</div>
+				<div class="sidebar-footer">
+					<button class="button icon" title="Settings" onclick="window.location.href='/options'">
+						<i class="ph ph-gear"></i>
+					</button>
+					<button class="button icon" title="Switch Account" onclick="window.location.href='/login'">
+						<i class="ph ph-user-switch"></i>
+					</button>
+					<button class="button icon danger" title="Log Out" onclick="logout()">
+						<i class="ph ph-sign-out"></i>
+					</button>
+				</div>
+			</aside>
+
+        <main class="main">
+            <header class="main-header">
+                <div>
+                    <button class="button icon showSidebar" onclick="showSidebar();">
+                        <i class="ph ph-list"></i>
+                    </button>
+                </div>
+                <div class="user-meta-group">
+                    <button class="button icon theme-toggle" aria-label="Toggle theme">
+                        <i class="ph ph-moon"></i>
+                    </button>
+                </div>
+            </header>
+
+            <div class="content">
+                <section class="panel chat-body">
+                    <div class="chat-header">
+                        <div class="chat-contact">
+                            <div>
+                                <div class="chat-contact-name">Notes</div>
+                            </div>
+                        </div>
+                        <div class="notes-actions">
+                            <span id="notes-status" class="notes-status">Loaded</span>
+                            <button class="button icon" title="New note" onclick="addNote()">
+                                <i class="ph ph-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="notes-wrapper">
+                        <div id="notes-grid" class="notes-grid"></div>
+                        <div class="notes-empty" id="notes-empty" style="display:none;">
+                            <p>No notes yet. Click + to add your first sticky.</p>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+    <div id="toast-container" class="toast-container"></div>
+    <script src="/shared/ui.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>

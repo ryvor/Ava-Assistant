@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Ava Options</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/shared/icon.svg" type="image/svg+xml">
+		<link href="./style.css" type="text/css" rel="stylesheet">
+		<!-- Phosphor Icons -->
+		<link rel="stylesheet" href="/phosphor/src/regular/style.css">
+		<!-- PWA -->
+		<link rel="manifest" href="/shared/manifest.webmanifest">
+		<meta name="theme-color" content="#7b5cff">
+	</head>
+	<body>
+		<div class="preload-page" id="options-preload" style="display: none;">
+			<div class="loader-card">
+				<div class="loader-orb">
+					<div class="loader-orb-core">A</div>
+					<div class="loader-orb-ring"></div>
+				</div>
+				<div class="loader-text">
+					<h1>Loading settings</h1>
+				</div>
+				<div class="loader-progress">
+					<span class="dot"></span>
+					<span class="dot"></span>
+					<span class="dot"></span>
+				</div>
+			</div>
+		</div>
+		<div class="options-page">
+			<header class="options-header">
+				<div class="brand">
+					<div class="logo">A</div>
+					<div>
+						<div class="title">Ava Settings</div>
+						<div class="subtitle">Manage your account, security, and chat style.</div>
+					</div>
+				</div>
+				<a class="button" href="/">
+					<i class="ph ph-caret-double-left"></i>
+				</a>
+			</header>
+
+			<main class="options-grid">
+				<section class="card">
+					<div class="card-header">
+						<div>
+							<div class="card-title">Account</div>
+							<div class="card-sub">Profile basics and identifiers</div>
+						</div>
+						<i class="ph ph-user"></i>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="label">Name</div>
+							<div class="value" id="opt-name">Loading...</div>
+						</div>
+						<div class="row">
+							<div class="label">User ID</div>
+							<div class="value" id="opt-id">Loading...</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="card">
+					<div class="card-header">
+						<div>
+							<div class="card-title">Security</div>
+							<div class="card-sub">Sessions and device access</div>
+						</div>
+						<i class="ph ph-shield-check"></i>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="label">Active sessions</div>
+							<div class="value muted">Coming soon</div>
+						</div>
+						<button class="button danger full" disabled>Log out of all devices</button>
+					</div>
+				</section>
+
+				<section class="card">
+					<div class="card-header">
+						<div>
+							<div class="card-title">Chat style</div>
+							<div class="card-sub">Tone, system prompts, defaults</div>
+						</div>
+						<i class="ph ph-chat-circle"></i>
+					</div>
+					<div class="card-body">
+						<div class="row">
+							<div class="label">Tone</div>
+							<div class="value muted">Coming soon</div>
+						</div>
+						<div class="row">
+							<div class="label">System prompt</div>
+							<div class="value muted">Coming soon</div>
+						</div>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<div id="toast-container" class="toast-container"></div>
+		<script src="/shared/ui.js"></script>
+		<script type="module" src="./script.js"></script>
+	</body>
+</html>

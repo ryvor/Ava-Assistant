@@ -1,6 +1,6 @@
 # Ava Assistant
 
-Ava is a local-first, friendly AI assistant. She runs on your machine, uses a LLaMA-compatible model via `node-llama-cpp`, and serves a single-page chat UI in your browser. There is no cloud dependency for inference—everything stays local.
+Ava is a local-first, friendly AI assistant. She runs on your machine, uses a LLaMA-compatible model via `node-llama-cpp`, and serves a single-page chat UI in your browser. There is no cloud dependency for inference-everything stays local.
 
 ## Features
 
@@ -65,11 +65,11 @@ Ava is a local-first, friendly AI assistant. She runs on your machine, uses a LL
 
 ## File Map (key parts)
 
-- `src/index.ts` — Express server entry.
-- `src/api/chatRoutes.ts` — Chat endpoint.
-- `src/model/llama.ts` — Chat generation (personality + reply).
-- `src/model/decisionEngine.ts` — Intent classifier (experimental).
-- `src/web/` — Front-end (HTML/CSS/JS, icons, manifest).
+- `src/index.ts` - Express server entry.
+- `src/api/chatRoutes.ts` - Chat endpoint.
+- `src/model/llama.ts` - Chat generation (personality + reply).
+- `src/model/decisionEngine.ts` - Intent classifier (experimental).
+- `src/web/` - Front-end (HTML/CSS/JS, icons, manifest).
 
 ## Model Source
 

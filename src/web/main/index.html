@@ -4,10 +4,12 @@
 		<meta charset="utf-8" />
 		<title>Ava Chat</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/shared/icon.svg" type="image/svg+xml">
 		<link href="./style.css" type="text/css" rel="stylesheet">
+		<!-- Phosphor Icons -->
 		<link rel="stylesheet" href="/phosphor/src/regular/style.css">
-		<link rel="manifest" href="/manifest.webmanifest">
-		<link rel="icon" href="icon.svg" type="image/svg+xml">
+		<!-- PWA -->
+		<link rel="manifest" href="/shared/manifest.webmanifest">
 		<meta name="theme-color" content="#7b5cff">
 	</head>
 	<body>
@@ -20,7 +22,6 @@
 
 				<div class="loader-text">
 					<h1>Ava is waking up</h1>
-					<p>Loading your workspace and memories...
 				</div>
 
 				<div class="loader-progress">
@@ -28,53 +29,6 @@
 					<span class="dot"></span>
 					<span class="dot"></span>
 				</div>
-			</div>
-		</div>
-		<div class="login-page" style="display: none;">
-			<!-- Step 1: Code input -->
-			<div id="login-step-code" class="login-step active">
-				<h1 class="login-title">Welcome to Ava</h1>
-				<p class="login-sub">Enter your 6-digit access code to continue</p>
-
-				<div class="code-input">
-					<input type="number" maxlength="1" />
-					<input type="number" maxlength="1" />
-					<input type="number" maxlength="1" />
-					<span></span>
-					<input type="number" maxlength="1" />
-					<input type="number" maxlength="1" />
-					<input type="number" maxlength="1" />
-				</div>
-
-				<button class="button primary full" onclick="startAuth()">Continue</button>
-			</div>
-			
-			<!-- Step 2.1: Pin input -->
-			<div id="login-step-pin" class="login-step">
-				<h1 class="login-title">Welcome to Ava</h1>
-				<p class="login-sub">Enter your pin code to continue</p>
-
-				<div class="code-input">
-					<input type="number" maxlength="1" />
-					<input type="number" maxlength="1" />
-					<input type="number" maxlength="1" />
-					<input type="number" maxlength="1" />
-				</div>
-
-				<button class="button primary full" onclick="submitPin()">Continue</button>
-			</div>
-
-			<!-- Step 2.2: Security question -->
-			<div id="login-step-challenge" class="login-step">
-				<div class="ava-avatar">A</div>
-
-				<h2 id="challenge-question">Loading challenge...</h2>
-
-				<input id="challenge-answer" placeholder="Type your answer..." />
-
-				<button class="button primary full" onclick="submitChallenge()">Verify</button>
-
-				<div id="challenge-error" class="error-msg"></div>
 			</div>
 		</div>
 		<div class="chat-page" style="display: none;">
@@ -90,7 +44,13 @@
 						</span>
 						<span>Chat</span>
 					</div>
-					<div class="sidebar-item">
+					<div class="sidebar-item" onclick="window.location.href='/notes'">
+						<span class="icon">
+							<i class="ph ph-note"></i>
+						</span>
+						<span>Notes</span>
+					</div>
+					<div class="sidebar-item" onclick="window.location.href='/orders'">
 						<span class="icon">
 							<i class="ph ph-list"></i>
 						</span>
@@ -98,10 +58,10 @@
 					</div>
 				</div>
 				<div class="sidebar-footer">
-					<button class="button icon" title="Settings">
+					<button class="button icon" title="Settings" onclick="window.location.href='/options'">
 						<i class="ph ph-gear"></i>
 					</button>
-					<button class="button icon" title="Switch Account">
+					<button class="button icon" title="Switch Account" onclick="window.location.href='/login'">
 						<i class="ph ph-user-switch"></i>
 					</button>
 					<button class="button icon danger" title="Log Out" onclick="logout()">
@@ -154,7 +114,7 @@
 								<i class="ph ph-paperclip"></i>
 							</button>
 							<input id="msg" class="message-send" placeholder="Type your message" />
-							<button class="button icon primary" onclick="send()">
+							<button class="button icon primary" onclick="sendMessage()">
 								<i class="ph ph-paper-plane-right"></i>
 							</button>
 						</div>
@@ -165,14 +125,13 @@
 						<div class="info-header">
 							<div class="chat-contact-name">General Information</div>
 							<button class="button icon hideInfo" onclick="hideGeneralInfo();">
-								<i class="ph ph-caret-double-left"></i>
+								<i class="ph ph-caret-double-right"></i>
 							</button>
 						</div>
 
 						<div class="info-content">
 							<div class="info-card">
 								<div class="info-card-header">
-									<div class="user-avatar">UN</div>
 									<div>
 										<div class="user-name">User Name</div>
 										<div class="user-account">XXX XXX</div>
@@ -234,7 +193,7 @@
 						</div>
 
 						<div class="info-footer">
-							<button class="button icon" onclick="">
+							<button class="button icon" onclick="window.location.href='/options'">
 								<i class="ph ph-gear"></i>
 							</button>
 						</div>

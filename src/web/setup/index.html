@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Ava Setup</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" href="/shared/icon.svg" type="image/svg+xml">
+		<link href="./style.css" type="text/css" rel="stylesheet">
+		<!-- Phosphor Icons -->
+		<link rel="stylesheet" href="/phosphor/src/regular/style.css">
+		<!-- PWA -->
+		<link rel="manifest" href="/shared/manifest.webmanifest">
+		<meta name="theme-color" content="#7b5cff">
+	</head>
+	<body>
+		<div class="preload-page" style="display: flex;">
+			<div class="loader-card">
+				<div class="loader-orb">
+					<div class="loader-orb-core">A</div>
+					<div class="loader-orb-ring"></div>
+				</div>
+				<div class="loader-text">
+					<h1>Ava is waking up</h1>
+				</div>
+				<div class="loader-progress">
+					<span class="dot"></span>
+					<span class="dot"></span>
+					<span class="dot"></span>
+				</div>
+			</div>
+		</div>
+
+		<div class="setup-page" style="display: none;">
+			<div class="setup-shell">
+				<div class="setup-left">
+					<div class="brand-chip">Welcome</div>
+					<h1 class="setup-title">Let's get you set up and connected</h1>
+					<p class="setup-sub">
+						Share a few details, then see how Ava follows you everywhere you work.
+					</p>
+					<div class="setup-progress">
+						<div class="progress-step active">
+							<div class="step-icon">1</div>
+							<div>
+								<div class="step-label">Your details</div>
+								<div class="step-sub">Secure admin profile</div>
+							</div>
+						</div>
+						<div class="progress-step">
+							<div class="step-icon">2</div>
+							<div>
+								<div class="step-label">Use Ava anywhere</div>
+								<div class="step-sub">Web, Discord, WhatsApp</div>
+							</div>
+						</div>
+						<div class="progress-step">
+							<div class="step-icon">3</div>
+							<div>
+								<div class="step-label">Celebrate</div>
+								<div class="step-sub">Jump straight into chat</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="setup-right">
+					<div class="setup-card glass">
+						<div class="setup-card-header">
+							<div class="ava-avatar">A</div>
+							<div>
+								<div class="eyebrow">Step 1 • Admin profile</div>
+								<div class="title">You are in control</div>
+							</div>
+							<div class="pulse-dot" aria-hidden="true"></div>
+						</div>
+
+						<div class="step step-1 active" id="setup-step-1">
+							<div class="setup-form two-col">
+								<div class="input-field">
+									<label for="setup-first-name">First name<span>*</span></label>
+									<input id="setup-first-name" placeholder="Ada" autocomplete="given-name" required/>
+								</div>
+								<div class="input-field">
+									<label for="setup-last-name">Last name<span>*</span></label>
+									<input id="setup-last-name" placeholder="Lovelace" autocomplete="family-name" required/>
+								</div>
+								<div class="input-field full">
+									<label for="setup-email">Email<span>*</span></label>
+									<input id="setup-email" type="email" placeholder="you@example.com" autocomplete="email" required/>
+								</div>
+								<div class="input-field full">
+									<label for="setup-pin">4-digit PIN</label>
+									<input
+										id="setup-pin"
+										placeholder="1234"
+										autocomplete="new-password"
+										inputmode="numeric"
+										maxlength="4"
+									/>
+								</div>
+							</div>
+							<div class="inline-support">
+								<div id="setup-code" class="setup-code"></div>
+								<div id="setup-error" class="error-msg"></div>
+							</div>
+							<button class="button primary full launch-btn" onclick="goToStep2()">
+								<span>Next: where you'll use Ava</span>
+								<i class="ph ph-arrow-right"></i>
+							</button>
+						</div>
+
+						<div class="step step-2" id="setup-step-2">
+							<div class="channel-section">
+								<div class="section-label">Step 2 • Use Ava anywhere</div>
+								<div class="channel-grid">
+									<div class="channel-card">
+										<div class="icon-wrap"><i class="ph ph-monitor"></i></div>
+										<div>
+											<div class="channel-title">Web & Desktop</div>
+											<div class="channel-sub">Open Ava in your browser or dock it beside your daily tools.</div>
+										</div>
+									</div>
+									<div class="channel-card">
+										<div class="icon-wrap"><i class="ph ph-discord-logo"></i></div>
+										<div>
+											<div class="channel-title">Discord</div>
+											<div class="channel-sub">Invite Ava to channels or DMs to answer in real time.</div>
+										</div>
+									</div>
+									<div class="channel-card">
+										<div class="icon-wrap"><i class="ph ph-whatsapp-logo"></i></div>
+										<div>
+											<div class="channel-title">WhatsApp</div>
+											<div class="channel-sub">Stay connected on mobile with secure, quick replies.</div>
+										</div>
+									</div>
+								</div>
+								<div class="microcopy muted">You can add connections after setup in Settings.</div>
+							</div>
+							<button class="button primary full launch-btn" onclick="submitAdminUser()">
+								<span>Launch Ava</span>
+								<i class="ph ph-arrow-right"></i>
+							</button>
+						</div>
+
+						<div class="microcopy">You can add more teammates later from settings.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="celebrate-page" style="display: none;">
+			<div class="celebrate-card">
+				<div class="celebrate-ribbon"></div>
+				<div class="celebrate-header">
+					<div>
+						<div class="eyebrow">Welcome to Ava</div>
+						<h1>Admin created successfully</h1>
+						<p>Your workspace is live. Here are your credentials.</p>
+					</div>
+					<div class="confetti">✨</div>
+				</div>
+				<div class="detail-grid">
+					<div class="detail-item">
+						<div class="label">Full name</div>
+						<div class="value" id="celebrate-name"></div>
+					</div>
+					<div class="detail-item blur-reveal" onclick="toggleBlur(this)">
+						<div class="label">Email</div>
+						<div class="value blurred" id="celebrate-email"></div>
+						<div class="hint">Hover or tap to reveal</div>
+					</div>
+					<div class="detail-item blur-reveal" onclick="toggleBlur(this)">
+						<div class="label">User ID</div>
+						<div class="value blurred" id="celebrate-id"></div>
+						<div class="hint">Hover or tap to reveal</div>
+					</div>
+					<div class="detail-item blur-reveal" onclick="toggleBlur(this)">
+						<div class="label">PIN</div>
+						<div class="value blurred" id="celebrate-pin"></div>
+						<div class="hint">Hover or tap to reveal</div>
+					</div>
+				</div>
+				<div class="celebrate-actions">
+					<button class="button primary full" onclick="proceedToChat()">
+						<span>Enter Ava</span>
+						<i class="ph ph-arrow-right"></i>
+					</button>
+					<div class="microcopy">Keep these details safe. You can add more users later.</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="toast-container" class="toast-container"></div>
+		<script src="/shared/ui.js"></script>
+		<script src="./script.js"></script>
+	</body>
+</html>

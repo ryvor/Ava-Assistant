@@ -8,7 +8,7 @@
   "description": "Chat with Ava Assistant.",
   "icons": [
     {
-      "src": "/icon.svg",
+      "src": "/shared/icon.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any"
