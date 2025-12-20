@@ -2,6 +2,7 @@ import type { Express, Request, Response } from 'express';
 import { getAvaReply } from '../core/decisionEngine.js';
 import { debugLog } from '../utils/debug.js';
 import { getMessagesPage, getPrimaryUserId, getRecentMessages, getSessionByToken, hasUsers, recordMessage } from '../db/database.js';
+import { executeCreateNote } from '../tools/create_note.js';
 
 type QueueItem = {
 	id: string;
@@ -112,6 +113,18 @@ async function runQueueItem(item: QueueItem) {
 			return;
 		}
 
+		// Handle tool execution (CREATE_NOTE)
+		if ((json as any).tool === "CREATE_NOTE") {
+			const noteReply = executeCreateNote(item.userId, json as any, item.message, shortHistory);
+			(json as any).reply = noteReply.reply;
+			(json as any).reason = noteReply.reason ?? (json as any).reason;
+			// Augment parameters with created note id if available
+			(json as any).parameters = {
+				...(json as any).parameters,
+				noteId: noteReply.noteId ?? (json as any).parameters?.noteId,
+			};
+		}
+
 		recordMessage(
 			'ava',
 			(json as any).reply,
@@ -146,6 +159,8 @@ function ensurePendingReply(userId: number) {
 	if (last.sender !== 'user') return;
 	enqueueMessage(userId, last.message);
 }
+
+type NoteResult = { reply: string; reason?: string; noteId?: number };
 
 export function registerChatRoutes(app: Express) {
 	// POST /api/chat - get Ava's reply to a user message

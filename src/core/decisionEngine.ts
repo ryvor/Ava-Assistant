@@ -4,7 +4,8 @@ import { debugLog } from '../utils/debug.js';
 import { getTools } from "../tools/registry.js";
 import { buildToolsPrompt } from "../tools/promptTools.js";
 
-const toolsPrompt = buildToolsPrompt(getTools());
+const toolsList = getTools();
+const toolsPrompt = buildToolsPrompt(toolsList);
 
 // Strip out <think>...</think> sections from model output
 function stripThink(text: string) {
@@ -15,11 +16,11 @@ function stripThink(text: string) {
 }
 
 type Mode = "CHAT" | "TOOL";
-type ToolName = "NONE" | "ORDER_FOOD" | "BOOK_TAXI";
+type ToolName = "NONE" | (typeof toolsList)[number]["name"];
 
 function normalizeModelReply(raw: any, message: string) {
     const allowedModes: Mode[] = ["CHAT", "TOOL"];
-    const allowedTools: ToolName[] = ["NONE", "ORDER_FOOD", "BOOK_TAXI"];
+    const allowedTools: ToolName[] = ["NONE", ...toolsList.map((t) => t.name as ToolName)];
 
     const cleaned: any = raw && typeof raw === "object" ? { ...raw } : {};
     if (typeof cleaned.mode === "string" && cleaned.mode.includes("|")) {
@@ -36,6 +37,8 @@ function normalizeModelReply(raw: any, message: string) {
     }
     if (cleaned.tool !== "NONE") {
         cleaned.mode = "TOOL";
+    } else if (!allowedModes.includes(cleaned.mode)) {
+        cleaned.mode = "CHAT";
     }
     if (!cleaned.parameters || typeof cleaned.parameters !== "object") {
         cleaned.parameters = {};
@@ -45,47 +48,6 @@ function normalizeModelReply(raw: any, message: string) {
     }
     if (typeof cleaned.reason !== "string") {
         cleaned.reason = "";
-    }
-
-    if (cleaned.tool === "ORDER_FOOD") {
-        const items = (cleaned.parameters as any).items;
-        if (typeof items === "string") {
-            cleaned.parameters.items = [items];
-        }
-    }
-    if (cleaned.tool === "BOOK_TAXI") {
-        const passengers = (cleaned.parameters as any).passengers;
-        if (typeof passengers === "string" && passengers.trim()) {
-            const parsed = Number(passengers);
-            cleaned.parameters.passengers = Number.isFinite(parsed) ? parsed : passengers;
-        }
-    }
-
-    const params = cleaned.parameters || {};
-    const hasValue = (value: any) => {
-        if (Array.isArray(value)) return value.length > 0;
-        if (value === null || value === undefined) return false;
-        return String(value).trim().length > 0;
-    };
-    const hasTaxiParams = ["pickup", "destination", "time", "passengers"].some((k) => hasValue(params[k]));
-    const hasFoodParams = ["cuisine", "items", "address"].some((k) => hasValue(params[k]));
-    const reasonText = typeof cleaned.reason === "string" ? cleaned.reason.toLowerCase() : "";
-
-    if (cleaned.tool === "NONE" && cleaned.mode === "CHAT" && (hasTaxiParams || hasFoodParams)) {
-        cleaned.tool = hasTaxiParams ? "BOOK_TAXI" : "ORDER_FOOD";
-        cleaned.mode = "TOOL";
-    } else if (cleaned.tool === "NONE" && /book_taxi|order_food/.test(reasonText)) {
-        cleaned.tool = reasonText.includes("book_taxi") ? "BOOK_TAXI" : "ORDER_FOOD";
-        cleaned.mode = "TOOL";
-    } else if (cleaned.tool === "NONE" && cleaned.mode === "CHAT") {
-        const msg = (message || "").toLowerCase();
-        if (/(taxi|cab|ride|uber|lyft|pickup|airport)/.test(msg)) {
-            cleaned.tool = "BOOK_TAXI";
-            cleaned.mode = "TOOL";
-        } else if (/(order|food|pizza|burger|takeaway|delivery)/.test(msg)) {
-            cleaned.tool = "ORDER_FOOD";
-            cleaned.mode = "TOOL";
-        }
     }
 
     return cleaned;
@@ -124,6 +86,11 @@ Rules:
 - Do not output <think> tags or hidden thoughts
 - Keep responses natural and human
 
+IMPORTANT:
+- Never claim that a real-world or persistent action has already happened.
+- Do not say things like "I have created", "I have saved", "I have booked".
+- Only describe intent or ask for the next required detail.
+
 Conversation history:
 ${shortHistory}
 
@@ -134,11 +101,7 @@ Tools available:
 all parameters are required unless marked optional.
 ${toolsPrompt}
 
-You must reply ONLY with valid JSON. No extra text. No code fences.
-
-Allowed values:
-- mode must be exactly "CHAT" or "TOOL"
-- tool must be exactly "NONE", "ORDER_FOOD", or "BOOK_TAXI"
+You must reply ONLY with valid JSON. No extra text. No code fences. If the user has already provided required details, do NOT repeat that you can help—act with the tool when possible. Provide concrete parameter values from the latest user message and conversation; avoid placeholders. Ask only for the single most important missing detail.
 
 Schema (must match exactly, do not output placeholder values like "CHAT|TOOL"):
 {
@@ -150,8 +113,13 @@ Schema (must match exactly, do not output placeholder values like "CHAT|TOOL"):
 }
 
 Rules:
-- If mode is "CHAT": tool must be "NONE" and reply must be a non-empty string.
-- If mode is "TOOL": tool must be one of the tool names and reply must have a valid response about what you have done.
+ - If mode is "CHAT": tool must be "NONE" and reply must be a non-empty string.
+ - If mode is "TOOL":
+  - Do NOT claim the action has been completed.
+  - reply must either:
+   a) ask for the single most important missing detail, or
+   b) briefly acknowledge the request and say what will happen next.
+
 - mode must NOT be a combination of modes. Only one mode is allowed at any time.
 - parameters must be an object. Include best-effort extracted fields, otherwise leave empty.
 
@@ -163,7 +131,7 @@ Return JSON only. Respond as Ava.
 
     const { rawReply, stats } = await generateText(prompt);
     debugLog("debug", "Ava reply generated.");
-    debugLog("trace", `reply: ${rawReply}`);
+    debugLog("debug", `reply: ${rawReply}`);
 
     // Robust parsing: try direct parse, otherwise extract JSON-looking substring
     const cleaned = stripThink(rawReply);
@@ -187,7 +155,7 @@ Return JSON only. Respond as Ava.
     }
 
     const normalized = normalizeModelReply(reply, message);
-    debugLog("debug", `Normalized reply: ${JSON.stringify(normalized)}`);
+    debugLog("trace", `Normalized reply: ${JSON.stringify(normalized)}`);
 
     // Basic validation
     if (!normalized || typeof normalized !== "object" || typeof (normalized as any).reply !== "string") {
@@ -203,3 +171,4 @@ Return JSON only. Respond as Ava.
         tps: stats.tps,
     };
 }
+

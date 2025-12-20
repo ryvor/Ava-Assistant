@@ -38,7 +38,7 @@ export async function generateText(fullPrompt: string): Promise<{ rawReply: stri
     const start = performance.now();
     const raw = await session.prompt(trimmedPrompt, {
         maxTokens: 512,
-        temperature: 0.7,
+        temperature: 0.4,
         topP: 0.85,
     });
     const end = performance.now();

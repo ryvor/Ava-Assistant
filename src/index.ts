@@ -43,11 +43,12 @@ app.use("/login", express.static(path.join(__dirname, "web", "login")));
 const adminUserExists = hasAdminUser();
 if (adminUserExists) {
   debugLog("debug", "Admin user found. Serving main client.");
-  app.use(express.static(path.join(__dirname, "web", "main")));
 } else {
   debugLog("info", "No admin user found. Serving setup client.");
-  app.use(express.static(path.join(__dirname, "web", "setup")));
 }
+app.use("/chat", express.static(path.join(__dirname, "web", "chat")));
+app.use("/setup", express.static(path.join(__dirname, "web", "setup")));
+app.get("/", (_req, res) => res.redirect(hasAdminUser() ? "/chat" : "/setup"));
 
 // API routes
 registerUserRoutes(app);
