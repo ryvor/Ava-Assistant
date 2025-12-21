@@ -89,6 +89,8 @@ ensureColumn('users', 'last_name', "TEXT DEFAULT ''");
 ensureColumn('users', 'is_admin', 'INTEGER NOT NULL DEFAULT 0');
 ensureColumn('users', 'user_code', "TEXT DEFAULT ''");
 ensureColumn('users', 'pin', "TEXT DEFAULT ''");
+ensureColumn('chat_history', 'mode', "TEXT DEFAULT ''");
+ensureColumn('chat_history', 'tool', "TEXT DEFAULT ''");
 ensureColumn('chat_history', 'reason', "TEXT DEFAULT ''");
 ensureColumn('chat_history', 'parameters', "TEXT DEFAULT ''");
 ensureColumn('user_notes', 'position', 'INTEGER NOT NULL DEFAULT 0');

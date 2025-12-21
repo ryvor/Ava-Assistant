@@ -4,9 +4,10 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
+		"init": "node scripts/init-models.mjs",
 		"dev": "tsx watch src/index.ts",
+
 		"build": "tsc",
-		"init-models": "node scripts/init-models.mjs",
 		"start": "node dist/index.js"
 	},
 	"keywords": [],
