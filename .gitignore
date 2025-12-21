@@ -1,6 +1,17 @@
+# Standard
 node_modules
 dist
 .env
 .DS_Store
-*.db*
 log.txt
+
+# Database files
+*.db
+
+# LLM models
+*.gguf
+*.bin
+*.safetensors
+*.onnx
+*.pt
+*.pth

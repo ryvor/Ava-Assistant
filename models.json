@@ -1,23 +1,31 @@
 [
     {
-        "id": "gm1b_q4",
-        "path": "gemma-3-1b-it-q4_0_s.gguf",
+        "id": "qwen3_0.6b_q4",
+        "path": "Qwen3-0.6B-Q4_K_M.gguf",
         "minRamGB": 2,
-        "link": "https://huggingface.co/google/gemma-3-1b-it-qat-q4_0-gguf"
+        "link": "https://huggingface.co/unsloth/Qwen3-0.6B-GGUF",
+        "comment": "",
+        "type": "Text -> Text"
     }, {
         "id": "qwen3_2b_q4",
         "path": "Qwen3VL-2B-Instruct-Q4_K_M.gguf",
         "minRamGB": 6,
-        "link": "https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct-GGUF"
+        "link": "https://huggingface.co/Qwen/Qwen3-VL-2B-Instruct-GGUF",
+        "comment": "",
+        "type": "Text, Images -> Text"
     }, {
         "id": "qwen3_4b_q4",
         "path": "Qwen3VL-4B-Instruct-Q4_K_M.gguf",
         "minRamGB": 12,
-        "link": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct-GGUF"
+        "link": "https://huggingface.co/Qwen/Qwen3-VL-4B-Instruct-GGUF",
+        "comment": "",
+        "type": "Text, Images -> Text"
     }, {
         "id": "qwen3_8b_q4",
         "path": "Qwen3VL-8B-Instruct-Q4_K_M.gguf",
         "minRamGB": 24,
-        "link": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct-GGUF"
+        "link": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct-GGUF",
+        "comment": "",
+        "type": "Text, Images -> Text"
     }
 ]
