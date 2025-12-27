@@ -5,3 +5,4 @@ nlu/.venv
 data/*
 nlu/models/*.tar.gz
 gru/*.pt
+.DS_Store
