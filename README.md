@@ -46,6 +46,13 @@ Ava is a local-first, friendly AI assistant. She runs on your machine, uses a LL
 
 5. Open the UI: `http://localhost:4173` (or your `WEB_PORT` / `PORT`).
 
+## Voice Replies (Supertonic 2)
+
+- Requires Python 3.9+ with `pip install supertonic` (first use downloads the model ~260MB).
+- Enable in `.env` (see `.env.example`) with `SUPERTONIC_ENABLED=true`; optional knobs: `SUPERTONIC_VOICE`, `SUPERTONIC_STEPS`, `SUPERTONIC_SPEED`, `SUPERTONIC_PYTHON`.
+- Audio is generated on-demand and cached under `data/tts-cache/`.
+- In the chat UI, toggle the speaker icon to auto-play Ava replies; each Ava bubble also has a replay button.
+
 ## API
 
 - `POST /api/chat`

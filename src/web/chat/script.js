@@ -11,6 +11,7 @@ let isSending = false;
 const REMEMBER_KEY = "ava_session_token";
 const PENDING_CHAT_KEY = "ava_pending_chat";
 const THEME_COOKIE = "ava_theme";
+const VOICE_PREF_KEY = "ava_voice_enabled";
 
 const HISTORY_PAGE_SIZE = 30;
 let historyOffset = 0;
@@ -18,10 +19,15 @@ let historyHasMore = true;
 let isLoadingHistory = false;
 let pendingPoll = null;
 
+let voiceEnabled = readVoicePreference();
+let activeAudio = null;
+let ttsAbortController = null;
+
 // --- Bootstrap --------------------------------------------------------------
 window.addEventListener("load", () => {
     applyTheme(readThemeCookie());
     bindThemeToggle();
+    bindVoiceToggle();
     registerServiceWorker();
     bindChatInput();
     bindHistoryScroll();
@@ -206,6 +212,7 @@ async function sendMessage() {
         } else {
             addMessageBubble("ava", data.reply);
             scrollChatToBottom(true);
+            maybeSpeakReply(data.reply);
         }
     } catch (err) {
         console.error("Chat error", err);
@@ -229,10 +236,24 @@ function renderMessageBubble(sender, text, prepend = false) {
     const row = document.createElement("div");
     row.classList.add("msg-row");
     if (sender === "me") row.classList.add("me");
+    if (sender === "ava") row.classList.add("ava");
 
     const bubble = document.createElement("div");
     bubble.classList.add("msg-bubble");
+    bubble.dataset.rawText = text;
     bubble.innerHTML = formatMessageForWeb(text);
+
+    if (sender === "ava") {
+        const controls = document.createElement("div");
+        controls.classList.add("bubble-controls");
+        const speakBtn = document.createElement("button");
+        speakBtn.classList.add("button", "icon", "speak-btn");
+        speakBtn.setAttribute("title", "Play reply");
+        speakBtn.innerHTML = '<i class="ph ph-speaker-simple-high"></i>';
+        speakBtn.addEventListener("click", () => speakAvaReply(text, speakBtn));
+        controls.appendChild(speakBtn);
+        bubble.appendChild(controls);
+    }
 
     row.appendChild(bubble);
     if (prepend && container.firstChild) {
@@ -391,6 +412,134 @@ function readThemeCookie() {
     return "light";
 }
 
+// --- Voice / TTS -----------------------------------------------------------
+function readVoicePreference() {
+    try {
+        const stored = localStorage.getItem(VOICE_PREF_KEY);
+        if (stored === null) return true;
+        return stored === "true";
+    } catch (err) {
+        console.warn("Could not read voice preference", err);
+        return true;
+    }
+}
+
+function writeVoicePreference(enabled) {
+    try {
+        localStorage.setItem(VOICE_PREF_KEY, enabled ? "true" : "false");
+    } catch (err) {
+        console.warn("Could not persist voice preference", err);
+    }
+}
+
+function bindVoiceToggle() {
+    const btn = document.querySelector(".voice-toggle");
+    if (!btn) return;
+    updateVoiceToggle(btn, voiceEnabled);
+    btn.addEventListener("click", () => {
+        voiceEnabled = !voiceEnabled;
+        updateVoiceToggle(btn, voiceEnabled);
+        writeVoicePreference(voiceEnabled);
+        if (!voiceEnabled) stopActiveAudio();
+        showToast(voiceEnabled ? "Voice replies on." : "Voice replies off.", "info");
+    });
+}
+
+function updateVoiceToggle(btn, enabled) {
+    const icon = btn.querySelector("i");
+    if (icon) {
+        icon.className = enabled ? "ph ph-speaker-simple-high" : "ph ph-speaker-simple-slash";
+    }
+    btn.setAttribute("aria-pressed", enabled ? "true" : "false");
+    btn.classList.toggle("active", !!enabled);
+}
+
+function maybeSpeakReply(text) {
+    if (!voiceEnabled) return;
+    void speakAvaReply(text);
+}
+
+async function speakAvaReply(text, sourceBtn) {
+    const clean = (text || "").trim();
+    if (!clean) return;
+    const controller = new AbortController();
+    if (ttsAbortController) {
+        ttsAbortController.abort();
+    }
+    ttsAbortController = controller;
+    try {
+        setSpeakingState(sourceBtn, true);
+        const audioUrl = await requestTtsAudio(clean, controller.signal);
+        await playAudioFromUrl(audioUrl);
+    } catch (err) {
+        if (controller.signal.aborted) return;
+        console.error("TTS playback failed", err);
+        const friendly = err instanceof Error && err.message ? err.message : "Couldn't play Ava's reply.";
+        showToast(friendly, "error");
+    } finally {
+        ttsAbortController = null;
+        setSpeakingState(sourceBtn, false);
+    }
+}
+
+function setSpeakingState(btn, isBusy) {
+    if (!btn) return;
+    btn.classList.toggle("is-busy", !!isBusy);
+}
+
+async function requestTtsAudio(text, signal) {
+    const res = await fetch("/api/tts", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ text }),
+        signal,
+    });
+    let data = {};
+    try {
+        data = await res.json();
+    } catch {}
+    if (!res.ok || !data.url) {
+        const msg = data?.message || "Voice playback unavailable.";
+        throw new Error(msg);
+    }
+    return data.url;
+}
+
+async function playAudioFromUrl(url) {
+    stopActiveAudio();
+    const audio = new Audio(url);
+    activeAudio = audio;
+    try {
+        await audio.play();
+    } catch (err) {
+        activeAudio = null;
+        throw err;
+    }
+    audio.addEventListener(
+        "ended",
+        () => {
+            if (activeAudio === audio) {
+                activeAudio = null;
+            }
+        },
+        { once: true }
+    );
+}
+
+function stopActiveAudio() {
+    if (activeAudio) {
+        try {
+            activeAudio.pause();
+            activeAudio.currentTime = 0;
+        } catch {}
+        activeAudio = null;
+    }
+    if (ttsAbortController) {
+        ttsAbortController.abort();
+        ttsAbortController = null;
+    }
+}
+
 // --- Service worker ---------------------------------------------------------
 function registerServiceWorker() {
     if (!("serviceWorker" in navigator)) return;
@@ -508,6 +657,10 @@ function startPendingPoll(startedAt) {
     let attempts = 0;
     const poll = async () => {
         attempts += 1;
+        if (!getPendingChat()) {
+            hideTypingIndicator();
+            return;
+        }
         try {
             const res = await fetch(`/api/chat/history?offset=0&limit=5`, {
                 headers: { "x-session-token": readSessionToken() || "" },
@@ -525,6 +678,7 @@ function startPendingPoll(startedAt) {
                     hideTypingIndicator();
                     resetChatHistory();
                     await loadHistory(true);
+                    maybeSpeakReply(found.message);
                     return;
                 }
             }

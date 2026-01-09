@@ -9,6 +9,7 @@ log.txt
 *.db
 *.db-shm
 *.db-wal
+data/tts-cache/
 
 # LLM models
 *.gguf

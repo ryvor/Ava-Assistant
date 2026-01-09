@@ -126,6 +126,16 @@
 	font-size: 18px;
 }
 
+.voice-toggle .ph {
+	font-size: 18px;
+}
+
+.voice-toggle.active {
+	background: var(--pill-strong);
+	color: var(--text-strong);
+	box-shadow: var(--shadow-soft);
+}
+
 .content {
     flex: 1;
     display: grid;
@@ -221,6 +231,39 @@
 	box-shadow: var(--bubble-shadow);
 	animation: bubble-in 220ms ease forwards;
 	white-space: pre-wrap;
+	position: relative;
+}
+
+.msg-row.ava .msg-bubble {
+	padding-right: 42px;
+}
+
+.bubble-controls {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.speak-btn {
+	width: 28px;
+	height: 28px;
+	border-radius: 999px;
+	background: var(--pill-bg);
+	color: var(--text-muted);
+	box-shadow: none;
+}
+
+.speak-btn:hover {
+	background: var(--pill-strong);
+	color: var(--text-strong);
+}
+
+.speak-btn.is-busy {
+	opacity: 0.6;
+	pointer-events: none;
 }
 
 .msg-row.me .msg-bubble {

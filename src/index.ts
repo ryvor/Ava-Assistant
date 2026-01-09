@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 import { registerChatRoutes } from './api/chatRoutes.js';
 import { registerUserRoutes } from './api/userRoutes.js';
 import { registerNotesRoutes } from './api/notesRoutes.js';
+import { registerTtsRoutes } from './api/ttsRoutes.js';
 import { warmTextModel } from './llm/textEngine.js';
 import { hasAdminUser } from './db/database.js';
 import { debugLog } from './utils/debug.js';
@@ -54,6 +55,7 @@ app.get("/", (_req, res) => res.redirect(hasAdminUser() ? "/chat" : "/setup"));
 registerUserRoutes(app);
 registerChatRoutes(app);
 registerNotesRoutes(app);
+registerTtsRoutes(app);
 
 const hostname = os.hostname();
 const localDomain = `${hostname}.local`.toLowerCase();
